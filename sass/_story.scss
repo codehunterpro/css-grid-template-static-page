@@ -1,0 +1,106 @@
+.story {
+  &__pictures {
+    background-image: linear-gradient(
+        rgba($color-primary, 0.5),
+        rgba($color-primary, 0.5)
+      ),
+      url("../img/back.jpg");
+      background-size: cover;
+    grid-column: full-start/col-end 4;
+    @media only screen and (max-width: $bp-tablet) {
+      grid-column: 1/-1;
+    }
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    align-items: center;
+    padding: 1.5rem 3rem;
+  }
+
+  &__img {
+    width: 100%;
+    box-shadow: 0 1.5rem 2rem rgba(#000, 0.5);
+    &--1 {
+      grid-column: 2/ 6;
+      grid-row: 2/6;
+
+      @media only screen and (max-width: $bp-tablet) {
+        grid-column: 1/5;
+        grid-row: 1/-1;
+       height: 100%;
+         
+      }
+    }
+    &--2 {
+      grid-column: 4/7;
+      grid-row: 4/6;
+      width: 115%;
+      z-index: 20;
+
+      @media only screen and (max-width: $bp-tablet) {
+      
+        grid-row: 1/-1;
+         width: 100%;
+      }
+    }
+  }
+
+  &__blog {
+    background-color: $color-grey-light-1;
+    padding: 1.8rem 8vw;
+    grid-column: col-start 5 / full-end;
+    @media only screen and (max-width: $bp-tablet) {
+      grid-column: 1/-1;
+      justify-items: center;
+      padding: 5rem 3rem;
+    }
+
+    /*display: flex;
+   flex-direction: column;
+   align-items: flex-start;*/
+
+    display: grid;
+    align-content: center;
+    justify-items: start;
+  }
+
+  &__text {
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-bottom: 4rem;
+    color: $color-grey-dark-1;
+  }
+}
+.heading-3--dark {
+  color: $color-primary;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+}
+
+.heading-2 {
+  font-size: 4rem;
+  line-height: 1;
+  font-style: italic;
+}
+
+.btn--primary {
+  &:focus,
+  &:link,
+  &:visited,
+  & {
+    border: none;
+    outline: none;
+    background-color: $color-primary;
+    padding: 1.8rem 3rem;
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-family: $font-display;
+    cursor: pointer;
+    transition: all 0.2s;
+    &:hover {
+      background-color: $color-primary-dark;
+    }
+  }
+}
